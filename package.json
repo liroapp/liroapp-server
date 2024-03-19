@@ -1,0 +1,28 @@
+{
+  "name": "liro-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammed-jahas/liroapp-server-node.js-mongob-jwt-googlemapAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammed-jahas/liroapp-server-node.js-mongob-jwt-googlemapAPI/issues"
+  },
+  "homepage": "https://github.com/muhammed-jahas/liroapp-server-node.js-mongob-jwt-googlemapAPI#readme",
+  "dependencies": {
+    "@mapbox/polyline": "^1.2.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.2",
+    "nodemon": "^3.1.0"
+  }
+}
