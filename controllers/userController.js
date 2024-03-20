@@ -1,3 +1,8 @@
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import polyline from "@mapbox/polyline";
+import User from "../models/userModel.js";
+
 const userRegister = async (req, res) => {
     try {
       const { username, password } = req.body;
@@ -68,15 +73,15 @@ const userRegister = async (req, res) => {
       
      
       const data = await response.json();
-      console.log(response);
+      // console.log(response);
       const result = {};
       result.distance = data["routes"][0].legs[0].distance;
       result.duration = data["routes"][0].legs[0].duration;
       const polylineSyntax = data["routes"][0].overview_polyline.points;
       const decoded = polyline.decode(polylineSyntax);
       result.polyline = decoded;
-      res.status(200).json(result);
       console.log(result);
+      res.status(200).json(result);
     } catch (error) {
       res.status(500);
     }
