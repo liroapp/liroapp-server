@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
     res.send('Welcome to Liro App');
   });
 
-cron.schedule('*/1 * * * *', () => {
+cron.schedule('*/10 * * * *', () => {
     console.log('Pinging server to keep it alive...');
     
     const options = {
