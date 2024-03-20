@@ -52,5 +52,34 @@ const userRegister = async (req, res) => {
     }
   };
   
+  const fetchDirection = async (req, res) => {
+    try {
+      const {
+        fromCoordinateslatitude,
+        fromCoordinateslongitude,
+        toCoordinateslatitude,
+        toCoordinateslongitude,
+      } = req.body;
+      console.log(req.body);
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/directions/json?origin=${fromCoordinateslatitude},${fromCoordinateslongitude}&destination=${toCoordinateslatitude},${toCoordinateslongitude}&mode=driving&key=${process.env.GOOGLE_MAP_API_KEY}`
+      );
+  
+      
+     
+      const data = await response.json();
+      console.log(response);
+      const result = {};
+      result.distance = data["routes"][0].legs[0].distance;
+      result.duration = data["routes"][0].legs[0].duration;
+      const polylineSyntax = data["routes"][0].overview_polyline.points;
+      const decoded = polyline.decode(polylineSyntax);
+      result.polyline = decoded;
+      res.status(200).json(result);
+      console.log(result);
+    } catch (error) {
+      res.status(500);
+    }
+  };
 
-  export { userLogin, userRegister, };
+  export { userLogin, userRegister, fetchDirection };

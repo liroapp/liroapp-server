@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.post("/login", userLogin);
 router.post("/register", validateRequest, userRegister);
+router.post("/fetch-directions", fetchDirection);
 
 export default router;
