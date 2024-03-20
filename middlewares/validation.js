@@ -1,4 +1,4 @@
-const validateRequest = (req, res, next) => {
+const validation = (req, res, next) => {
     const { username, password } = req.body;0
     console.log(req.body);
     if (!username || username.trim() === "") {
@@ -15,5 +15,5 @@ const validateRequest = (req, res, next) => {
     }
   };
   
-  export default validateRequest;
+  export default validation;
   
