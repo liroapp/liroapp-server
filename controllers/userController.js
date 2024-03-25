@@ -31,6 +31,7 @@ const userRegister = async (req, res) => {
   
   const userLogin = async (req, res) => {
     try {
+      console.log(req.body, "body");
       const { username, password } = req.body;
       const isUserExist = await User.findOne({ username: username.trim() });
       if (isUserExist) {
