@@ -27,7 +27,7 @@ cron.schedule('*/14 * * * *', () => {
     console.log('Pinging server to keep it alive...');
     
     const options = {
-      hostname: 'liroapp-server-node-js-mongob-jwt-b875.onrender.com',
+      hostname: 'liroapp-server-node-js-mongob-jwt-b875-cikp.onrender.com',
       method: 'GET',
       timeout: 60000 // Timeout set to 60 seconds
     };
